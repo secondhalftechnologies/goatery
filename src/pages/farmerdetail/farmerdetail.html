@@ -10,8 +10,9 @@
   <super-tabs id="mainTabs" [config]="{ sideMenu: 'left' }" scrollTabs toolbarColor="light" toolbarBackground="danger" indicatorColor="light" badgeColor="yellow" (tabSelect)="onTabSelect($event)">
     <super-tab [rootParams]="parmsPage1" [swipeBackEnabled]="true" [root]="page1" [title]="showTitles? 'kyc' : ''" id="page1"></super-tab>
     <super-tab [rootParams]="parmsPage2" [root]="page2" [title]="showTitles? 'land details' : ''" id="page2"></super-tab>
-    <super-tab [rootParams]="parmsPage3" [root]="page3" [title]="showTitles? 'crop details' : ''" id="page3"></super-tab>
-    <super-tab [rootParams]="parmsPage4" [root]="page4" [title]="showTitles? 'assets' : ''" id="page4"></super-tab>
-    <super-tab [rootParams]="parmsPage5" [root]="page5" [title]="showTitles? 'loan and liability' : ''" id="page5"></super-tab>
+    <super-tab [rootParams]="parmsPage3" [root]="page3" [title]="showTitles? 'goat information' : ''" id="page3"></super-tab>
+    <super-tab [rootParams]="parmsPage4" [root]="page4" [title]="showTitles? 'loan information' : ''" id="page4"></super-tab>
+    <super-tab [rootParams]="parmsPage5" [root]="page5" [title]="showTitles? 'total income' : ''" id="page5"></super-tab>
+    <super-tab [rootParams]="parmsPage6" [root]="page6" [title]="showTitles? 'producer company information' : ''" id="page6"></super-tab>
   </super-tabs>
 </ion-content>

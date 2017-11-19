@@ -45,36 +45,40 @@ export class Forms {
 
 		if(this.form_name == 'kyc'){
 			this.forms = [
-				{ title: 'Applicant\'s Personal Details',   pageName: 'PersonalDetailsPage', point: '0', icon : 'person'},
-				{ title: 'Residence Status & Details',      pageName: 'ResidenceDetailsPage', point: '0', icon : 'locate'},
-				{ title: 'Applicant\'s Knowledge',     		pageName: 'KycKnowledgePage', point: '0', icon : 'book'},
-				{ title: 'Applicant\'s Phone Details', 		pageName: 'KycPhonePage', point: '0', icon : 'phone-portrait'},
-				{ title: 'Spouse Details',             		pageName: 'KycSpousePage', point: '0', icon : 'woman'},
-				{ title: 'Spouse\'s Knowledge',             pageName: 'SpouseKnowledgePage', point: '0', icon : 'book'},
-				{ title: 'Family Details',             		pageName: 'KycFamilyPage', point: '0', icon : 'people'},
-				{ title: 'Appliances Motors',          		pageName: 'KycAppliancesPage', point: '0', icon : 'cog'},
+				{ title: 'FINANCIALS AND OCCUPATION',   pageName: 'KycFinancialAndOccupationPage', point: '0', icon : 'cash'},
+				{ title: 'FAMILY MEMBER DETAILS',      	pageName: 'KycFamilyDetailsPage', point: '0', icon : 'people'},
+				{ title: 'HOME DETAILS',     			pageName: 'KycHomeDetailsPage', point: '0', icon : 'locate'},
+				{ title: 'MIGRATION DETAILS', 			pageName: 'KycMigrationDetailsPage', point: '0', icon : 'phone-portrait'},
 			];
 		}
 		else if(this.form_name == 'land details'){
 			this.forms = [
-				{ title: 'Farm Land Details',  pageName: 'LandFarmPage', point: '0', icon : 'locate'},
+				{ title: 'FARMING Details',  	pageName: 'FarmingDetailsPage', point: '0', icon : 'locate'},
+				{ title: 'FARM EQUIPMENT',  	pageName: 'FarmEquipmentPage', point: '0', icon : 'locate'},
 			];
 		}
-		else if(this.form_name == 'crop details'){
+		else if(this.form_name == 'goat information'){
 			this.forms = [
-				{ title: 'Crop And Cultivation Details',  pageName: 'CropCultivationPage', point: '0', icon : 'leaf'},
-				{ title: 'Previous Crop Cycle Details',   pageName: 'CropPreviousPage', point: '0', icon : 'leaf'},
+				{ title: 'GOAT DETAILS',  pageName: 'GoatDetailsPage', point: '0', icon : 'leaf'},
+				{ title: 'GOAT HEALTH AND MEDICAL',   pageName: 'GoatHealthAndMedicalDetailsPage', point: '0', icon : 'leaf'},
+				{ title: 'GOAT INCOME AND EXPENDITURE',   pageName: 'GoatIncomeAndExpenditurePage', point: '0', icon : 'leaf'},
+
 			];
 		}
-		else if(this.form_name == 'assets'){
+		else if(this.form_name == 'loan information'){
 			this.forms = [
-				{ title: 'Assets Details',  pageName: 'AssetsDetailsPage', point: '0', icon : 'arrow-round-forward'},
-				{ title: 'Live Stock',      pageName: 'AssetsStockPage',   point: '0', icon : 'arrow-round-forward'},
+				{ title: 'LOANS & LIABILITIES', pageName: 'LoanAndLiabilitiesPage', point: '0', icon : 'arrow-round-forward'},
+				{ title: 'INSURANCE',      		pageName: 'InsurancePage',   point: '0', icon : 'arrow-round-forward'},
 			];
 		}
-		else if(this.form_name == 'loan and liability'){
+		else if(this.form_name == 'total income'){
 			this.forms = [
-				{ title: 'Financial Details',     pageName: '', point: '0', icon : 'cash'},
+				{ title: 'TOTAL INCOME',     pageName: 'TotalIncomePage', point: '0', icon : 'cash'},
+			];
+		}
+		else if(this.form_name == 'producer company information'){
+			this.forms = [
+				{ title: 'PRODUCER COMPANY DETAILS',     pageName: 'ProducerCompanyDetailsPage', point: '0', icon : 'cash'},
 			];
 		}
 	}
