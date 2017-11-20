@@ -1,0 +1,108 @@
+<!--
+  Generated template for the LandFarmingDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>FARMING DETAILS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<form [formGroup]="farming">
+		<ion-list>
+			<div padding>
+
+				<ion-item>
+					<ion-label floating>Own Land </ion-label>
+					<ion-input formControlName="f5_own_land" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_own_land.valid  && (farming.controls.f5_own_land.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Own Land -->
+
+				<ion-item>
+					<ion-label floating>Leased In Land </ion-label>
+					<ion-input formControlName="f5_leased_in_land" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_leased_in_land.valid  && (farming.controls.f5_leased_in_land.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Leased In Land -->
+
+				<ion-item>
+					<ion-label floating>Leased Out Land </ion-label>
+					<ion-input formControlName="f5_leased_out_land" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_leased_out_land.valid  && (farming.controls.f5_leased_out_land.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Leased Out Land -->
+
+				<ion-item>
+					<ion-label floating>Barren Land </ion-label>
+					<ion-input formControlName="f5_barren_land" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_barren_land.valid  && (farming.controls.f5_barren_land.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Barren Land -->
+
+				<ion-item>
+					<ion-label floating>Cultivable Land </ion-label>
+					<ion-input formControlName="f5_cultivable_land" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_cultivable_land.valid  && (farming.controls.f5_cultivable_land.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Cultivable Land -->
+
+				<ion-item>
+					<ion-label floating>Irrigated Land</ion-label>
+					<ion-input formControlName="f5_irrigated_land" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_irrigated_land.valid  && (farming.controls.f5_irrigated_land.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Irrigated Land -->
+
+				<ion-item>
+					<ion-label floating>state the acreage</ion-label>
+					<ion-input formControlName="f5_acreage_irrigated_land" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_acreage_irrigated_land.valid  && (farming.controls.f5_acreage_irrigated_land.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- state the acreage -->
+
+				<ion-item>
+					<ion-label floating>UnIrrigated Land/Rain Fed </ion-label>
+					<ion-input formControlName="f5_unirrigated_land" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_unirrigated_land.valid  && (farming.controls.f5_unirrigated_land.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- UnIrrigated Land/Rain Fed -->
+
+				<ion-item>
+					<ion-label floating>state the acreage</ion-label>
+					<ion-input formControlName="f5_acreage_unirrigated_land" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_acreage_unirrigated_land.valid  && (farming.controls.f5_acreage_unirrigated_land.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- state the acreage -->
+
+				<ion-item>
+					<ion-label floating>Annual Income of Farming</ion-label>
+					<ion-input formControlName="f5_annual_income_of_farming" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!farming.controls.f5_annual_income_of_farming.valid  && (farming.controls.f5_annual_income_of_farming.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Annual Income of Farming -->
+
+			</div>
+		</ion-list>
+	</form>
+
+	<ion-fab top right edge>
+		<button (click)="save()" ion-fab><ion-icon name="checkmark"></ion-icon></button>
+    </ion-fab>
+</ion-content>

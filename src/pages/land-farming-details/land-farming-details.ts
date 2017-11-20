@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /**
- * Generated class for the KycHomeDetailsPage page.
+ * Generated class for the LandFarmingDetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,37 +11,34 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @IonicPage()
 @Component({
-  selector: 'page-kyc-home-details',
-  templateUrl: 'kyc-home-details.html',
+  selector: 'page-land-farming-details',
+  templateUrl: 'land-farming-details.html',
 })
-export class KycHomeDetailsPage {
+export class LandFarmingDetailsPage {
 
-	home: FormGroup;
+	farming: FormGroup;
 	submitAttempt: boolean = false;
 
 	constructor(public navCtrl: NavController, 
 				public navParams: NavParams,
 				public toastCtrl: ToastController,
 				public formBuilder: FormBuilder) {
-		this.home = formBuilder.group({
-			'f3_house_type' : ['', Validators.required],
-			'f3_is_electricity' : ['', Validators.required],
-			'f3_is_gas_connection' : ['', Validators.required],
-			'f3_is_tv' : ['', Validators.required],
-			'f3_is_radio' : ['', Validators.required],
-			'f3_is_fan' : ['', Validators.required],
-			'f3_is_mobile' : ['', Validators.required],
-			'f3_is_mixer' : ['', Validators.required],
-			'f3_is_cooker' : ['', Validators.required],
-			'f3_is_bed' : ['', Validators.required],
-			'f3_num_of_chairs' : ['', Validators.required],
-			'f3_num_of_cycle' : ['', Validators.required],
-			'f3_num_of_motorcycle' : ['', Validators.required],
+		this.farming = formBuilder.group({
+			'f5_own_land' : ['', Validators.required],
+			'f5_leased_in_land' : ['', Validators.required],
+			'f5_leased_out_land' : ['', Validators.required],
+			'f5_barren_land' : ['', Validators.required],
+			'f5_cultivable_land' : ['', Validators.required],
+			'f5_irrigated_land' : ['', Validators.required],
+			'f5_acreage_irrigated_land' : ['', Validators.required],
+			'f5_unirrigated_land' : ['', Validators.required],
+			'f5_acreage_unirrigated_land' : ['', Validators.required],
+			'f5_annual_income_of_farming' : ['', Validators.required],
 		});
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad KycHomeDetailsPage');
+		console.log('ionViewDidLoad LandFarmingDetailsPage');
 	}
 
 	showMessage(message, style: string, dur?: number)
@@ -61,9 +58,9 @@ export class KycHomeDetailsPage {
 	save()
 	{
 		this.submitAttempt = true;
-		if (this.home.valid) 
+		if (this.farming.valid) 
 		{
-			console.log(this.home.value);
+			console.log(this.farming.value);
 		}
 		else
 		{

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { KycFinancialAndOccupationPage } from './kyc-financial-and-occupation';
+import { KycMigrationDetailsPage } from './kyc-migration-details';
 
 @NgModule({
   declarations: [
-    KycFinancialAndOccupationPage,
+    KycMigrationDetailsPage,
   ],
   imports: [
-    IonicPageModule.forChild(KycFinancialAndOccupationPage),
+    IonicPageModule.forChild(KycMigrationDetailsPage),
   ],
 })
-export class KycFinancialAndOccupationPageModule {}
+export class KycMigrationDetailsPageModule {}

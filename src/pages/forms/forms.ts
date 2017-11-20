@@ -53,27 +53,27 @@ export class Forms {
 		}
 		else if(this.form_name == 'land details'){
 			this.forms = [
-				{ title: 'FARMING Details',  	pageName: 'FarmingDetailsPage', point: '0', icon : 'locate'},
-				{ title: 'FARM EQUIPMENT',  	pageName: 'FarmEquipmentPage', point: '0', icon : 'locate'},
+				{ title: 'FARMING Details',  	pageName: 'LandFarmingDetailsPage', point: '0', icon : 'locate'},
+				{ title: 'FARM EQUIPMENT',  	pageName: 'LandFarmEquipmentDetailsPage', point: '0', icon : 'locate'},
 			];
 		}
 		else if(this.form_name == 'goat information'){
 			this.forms = [
 				{ title: 'GOAT DETAILS',  pageName: 'GoatDetailsPage', point: '0', icon : 'leaf'},
 				{ title: 'GOAT HEALTH AND MEDICAL',   pageName: 'GoatHealthAndMedicalDetailsPage', point: '0', icon : 'leaf'},
-				{ title: 'GOAT INCOME AND EXPENDITURE',   pageName: 'GoatIncomeAndExpenditurePage', point: '0', icon : 'leaf'},
+				{ title: 'GOAT INCOME AND EXPENDITURE',   pageName: 'GoatIncomeAndExpenditureDetailsPage', point: '0', icon : 'leaf'},
 
 			];
 		}
 		else if(this.form_name == 'loan information'){
 			this.forms = [
-				{ title: 'LOANS & LIABILITIES', pageName: 'LoanAndLiabilitiesPage', point: '0', icon : 'arrow-round-forward'},
-				{ title: 'INSURANCE',      		pageName: 'InsurancePage',   point: '0', icon : 'arrow-round-forward'},
+				{ title: 'LOANS & LIABILITIES', pageName: 'LoanDetailsPage', point: '0', icon : 'arrow-round-forward'},
+				{ title: 'INSURANCE',      		pageName: 'InsuranceDetailsPage',   point: '0', icon : 'arrow-round-forward'},
 			];
 		}
 		else if(this.form_name == 'total income'){
 			this.forms = [
-				{ title: 'TOTAL INCOME',     pageName: 'TotalIncomePage', point: '0', icon : 'cash'},
+				{ title: 'TOTAL INCOME',     pageName: 'TotalIncomeDetailsPage', point: '0', icon : 'cash'},
 			];
 		}
 		else if(this.form_name == 'producer company information'){

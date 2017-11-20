@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /**
- * Generated class for the KycFamilyPage page.
+ * Generated class for the KycFamilyDetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -16,67 +16,55 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class KycFamilyDetailsPage {
 
-  	family: FormGroup;
+	family: FormGroup;
 	submitAttempt: boolean = false;
 
 	constructor(public navCtrl: NavController, 
-				public navParams: NavParams, 
+				public navParams: NavParams,
 				public toastCtrl: ToastController,
-				public formBuilder: FormBuilder) {
+				public formBuilder: FormBuilder) 
+	{
 		this.family = formBuilder.group({
-			'f7_points' : ['0'],
-
-			'f7_jointfamily' : ['', Validators.required],
-			'f7_members' : ['', Validators.required],
-			'f7_children' : ['', Validators.required],
-			'f7_smartuse' : ['',Validators.required],
+			'f2_husband_name' : ['', Validators.required],
+			'f2_contact_number' : ['', Validators.required],
+			'f2_education_id' : ['', Validators.required],
+			'occupation_id' : ['', Validators.required],
+			'f2_num_of_days_labor_work' : ['', Validators.required],
+			'f2_labor_work_rate' : ['', Validators.required],
+			'f2_husband_annual_income' : ['', Validators.required],
+			'f2_num_of_earning_members' : ['', Validators.required],
+			'f2_annual_income_of_family' : ['', Validators.required],
 		});
 	}
 
-	ionViewDidLoad() {
-		console.log('ionViewDidLoad KycPhonePage');
-
-		this.family.controls['f7_children'].valueChanges.subscribe(() => {this.setValidation();});
-
-	}
-
-	setValidation()
+	ionViewDidLoad() 
 	{
-		let controls = this.family.controls;
-
-		console.log(controls['f7_smartuse'].value);
-		if(controls['f7_children'].value > 0)
-		{
-			controls['f7_smartuse'].enable({ emitEvent: false });
-			console.log('ddddf');
-		}
-		else{
-
-			controls['f7_smartuse'].setValue('', { emitEvent: false });
-			controls['f7_smartuse'].disable();
-
-		}
-
+		console.log('ionViewDidLoad KycFamilyDetailsPage');
 	}
 
-	showMessage(message, style: string, dur?: number){
+	showMessage(message, style: string, dur?: number)
+	{
 		const toast = this.toastCtrl.create({
-	      message: message,
-	      showCloseButton: true,
-	      duration: dur || 5000,
-	      closeButtonText: 'Ok',
-	      cssClass: style,
-	      dismissOnPageChange: true
+			message: message,
+			showCloseButton: true,
+			duration: dur || 5000,
+			closeButtonText: 'Ok',
+			cssClass: style,
+			dismissOnPageChange: true
 	    });
 
 	    toast.present();
 	}
 
-	save(){
+	save()
+	{
 		this.submitAttempt = true;
-		if (this.family.valid) {
+		if (this.family.valid) 
+		{
 			console.log(this.family.value);
-		}else{
+		}
+		else
+		{
 			console.log('Validation error');
 			this.showMessage("Please fill valid data!", "danger", 100000);
 		}

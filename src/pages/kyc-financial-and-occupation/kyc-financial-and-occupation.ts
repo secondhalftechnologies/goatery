@@ -24,42 +24,44 @@ export class KycFinancialAndOccupationPage {
 				public toastCtrl: ToastController,
 				public formBuilder: FormBuilder) {
 		this.financial_and_occupation = formBuilder.group({
-			'f6_points' : ['0'],
-
-			'f6_jointfamily' : ['', Validators.required],
-			'f6_members' : ['', Validators.required],
-			'f6_children' : ['', Validators.required],
-			'f6_smartuse' : ['',Validators.required],
+			'f1_have_bank_account' : ['', Validators.required],
+			'f1_financial_status_id' : ['', Validators.required],
+			'f1_woman_anuual_income' : ['', Validators.required],
+			'occupation_id' : ['', Validators.required],
+			'f1_num_of_days_labor_work' : ['',Validators.required],
+			'f1_labor_work_rate' : ['',Validators.required],
+			'f1_income_from_labor' : ['',Validators.required],
 		});
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad KycPhonePage');
+		console.log('ionViewDidLoad KycFinancialAndOccupationPage');
 
-		this.financial_and_occupation.controls['f6_children'].valueChanges.subscribe(() => {this.setValidation();});
+		// this.financial_and_occupation.controls['f6_children'].valueChanges.subscribe(() => {this.setValidation();});
 
 	}
 
-	setValidation()
+	// setValidation()
+	// {
+	// 	let controls = this.financial_and_occupation.controls;
+
+	// 	console.log(controls['f6_smartuse'].value);
+	// 	if(controls['f6_children'].value > 0)
+	// 	{
+	// 		controls['f6_smartuse'].enable({ emitEvent: false });
+	// 		console.log('ddddf');
+	// 	}
+	// 	else{
+
+	// 		controls['f6_smartuse'].setValue('', { emitEvent: false });
+	// 		controls['f6_smartuse'].disable();
+
+	// 	}
+
+	// }
+
+	showMessage(message, style: string, dur?: number)
 	{
-		let controls = this.financial_and_occupation.controls;
-
-		console.log(controls['f6_smartuse'].value);
-		if(controls['f6_children'].value > 0)
-		{
-			controls['f6_smartuse'].enable({ emitEvent: false });
-			console.log('ddddf');
-		}
-		else{
-
-			controls['f6_smartuse'].setValue('', { emitEvent: false });
-			controls['f6_smartuse'].disable();
-
-		}
-
-	}
-
-	showMessage(message, style: string, dur?: number){
 		const toast = this.toastCtrl.create({
 	      message: message,
 	      showCloseButton: true,
@@ -72,11 +74,15 @@ export class KycFinancialAndOccupationPage {
 	    toast.present();
 	}
 
-	save(){
+	save()
+	{
 		this.submitAttempt = true;
-		if (this.financial_and_occupation.valid) {
+		if (this.financial_and_occupation.valid) 
+		{
 			console.log(this.financial_and_occupation.value);
-		}else{
+		}
+		else
+		{
 			console.log('Validation error');
 			this.showMessage("Please fill valid data!", "danger", 100000);
 		}

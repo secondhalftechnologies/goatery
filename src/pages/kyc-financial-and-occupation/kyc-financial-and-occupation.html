@@ -7,7 +7,7 @@
 <ion-header>
 
   	<ion-navbar color="app">
-    	<ion-title>Financial And Occupation</ion-title>
+    	<ion-title>FINANCIAL AND OCCUPATION</ion-title>
   	</ion-navbar>
   	<!-- <ion-toolbar color="app">
 		<ion-title>Total : {{family.controls.f6_points.value}}</ion-title>
@@ -20,88 +20,78 @@
 	<form [formGroup]="financial_and_occupation">
 		<ion-list>
 			<div padding>
+				
 				<ion-item>
-				    <ion-label floating>Do You Live In A Joint Family? <span>*</span></ion-label>
-				    <ion-select formControlName="f6_jointfamily" interface="popover">
-				      <ion-option value="yes">Yes</ion-option>
-				      <ion-option value="no">No</ion-option>
+				    <ion-label floating>Do You Have Bank Account? <span>*</span></ion-label>
+				    <ion-select formControlName="f1_have_bank_account" interface="popover">
+						<ion-option value="yes">Yes</ion-option>
+						<ion-option value="no">No</ion-option>
 				    </ion-select>
 				</ion-item>
-				<div *ngIf="financial_and_occupation.controls.f6_jointfamily.invalid  && (financial_and_occupation.controls.f6_jointfamily.dirty || submitAttempt)">
-		            <p *ngIf="financial_and_occupation.controls.f6_jointfamily.errors.required">This field is required.</p>
-		        </div>
+				<div *ngIf="financial_and_occupation.controls.f1_have_bank_account.invalid  && (financial_and_occupation.controls.f1_have_bank_account.dirty || submitAttempt)">
+		            <p *ngIf="financial_and_occupation.controls.f1_have_bank_account.errors.required">This field is required.</p>
+		        </div> <!-- Do you have a Bank Account -->
 
-
-				<ion-item>
-				    <ion-label floating>How Many Members Are There In Your Family? <span>*</span></ion-label>
-				    <ion-select formControlName="f6_members" interface="popover">
-				      <ion-option value="1">1</ion-option>
-				      <ion-option value="2">2</ion-option>
-				      <ion-option value="3">3</ion-option>
-				      <ion-option value="4">4</ion-option>
-				      <ion-option value="5">5</ion-option>
-				      <ion-option value="6">6</ion-option>
-				      <ion-option value="7">7</ion-option>
-				      <ion-option value="8">8</ion-option>
-				      <ion-option value="9">9</ion-option>
-				      <ion-option value="10">10</ion-option>
-				      <ion-option value="11">11</ion-option>
-				      <ion-option value="12">12</ion-option>
-				      <ion-option value="13">13</ion-option>
-				      <ion-option value="14">14</ion-option>
-				      <ion-option value="15">15</ion-option>
-				      <ion-option value="16">16</ion-option>
-				      <ion-option value="17">17</ion-option>
-				      <ion-option value="18">18</ion-option>
-				      <ion-option value="19">19</ion-option>
-				      <ion-option value="20">20</ion-option>
+		        <ion-item>
+				    <ion-label floating>Financial Status <span>*</span></ion-label>
+				    <ion-select formControlName="f1_financial_status_id" interface="popover">
+						<ion-option value="1">BPL</ion-option>
+						<ion-option value="2">APL </ion-option>
+						<ion-option value="3">Anthodaya</ion-option>
+						<ion-option value="4">White Ration Card</ion-option>
 				    </ion-select>
 				</ion-item>
-				<div *ngIf="financial_and_occupation.controls.f6_members.invalid  && (financial_and_occupation.controls.f6_members.dirty || submitAttempt)">
-		            <p *ngIf="financial_and_occupation.controls.f6_members.errors.required">This field is required.</p>
-		        </div>
-
+				<div *ngIf="financial_and_occupation.controls.f1_financial_status_id.invalid  && (financial_and_occupation.controls.f1_financial_status_id.dirty || submitAttempt)">
+		            <p *ngIf="financial_and_occupation.controls.f1_financial_status_id.errors.required">This field is required.</p>
+		        </div>	<!-- Financial Status -->
 
 				<ion-item>
-				    <ion-label floating>Number Of Children <span>*</span></ion-label>
-				    <ion-select formControlName="f6_children" interface="popover">
-				      <ion-option value="0">0</ion-option>
-				      <ion-option value="1">1</ion-option>
-				      <ion-option value="2">2</ion-option>
-				      <ion-option value="3">3</ion-option>
-				      <ion-option value="4">4</ion-option>
-				      <ion-option value="5">5</ion-option>
-				      <ion-option value="6">6</ion-option>
-				      <ion-option value="7">7</ion-option>
-				      <ion-option value="8">8</ion-option>
-				      <ion-option value="9">9</ion-option>
-				      <ion-option value="10">10</ion-option>
-				      <ion-option value="11">11</ion-option>
-				      <ion-option value="12">12</ion-option>
-				      <ion-option value="13">13</ion-option>
-				      <ion-option value="14">14</ion-option>
-				      <ion-option value="15">15</ion-option>
+					<ion-label floating>Annual Income of Woman</ion-label>
+					<ion-input formControlName="f1_woman_anuual_income" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!financial_and_occupation.controls.f1_woman_anuual_income.valid  && (financial_and_occupation.controls.f1_woman_anuual_income.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Annual Income of Woman --> 
+
+				<ion-item>
+				    <ion-label floating>Occupation <span>*</span></ion-label>
+				    <ion-select formControlName="occupation_id" interface="popover">
+						<ion-option value="1">Farming</ion-option>
+						<ion-option value="2">Dairy</ion-option>
+						<ion-option value="3">Goatery</ion-option>
+						<ion-option value="4">Poultry</ion-option>
+						<ion-option value="5">Service</ion-option>
+						<ion-option value="6">Business</ion-option>
+						<ion-option value="7">Labor</ion-option>			      
 				    </ion-select>
 				</ion-item>
-				<div *ngIf="financial_and_occupation.controls.f6_children.invalid  && (financial_and_occupation.controls.f6_children.dirty || submitAttempt)">
-		            <p *ngIf="financial_and_occupation.controls.f6_children.errors.required">This field is required.</p>
-		        </div>
+				<div *ngIf="financial_and_occupation.controls.occupation_id.invalid  && (financial_and_occupation.controls.occupation_id.dirty || submitAttempt)">
+		            <p *ngIf="financial_and_occupation.controls.occupation_id.errors.required">This field is required.</p>
+		        </div>	<!-- Main Occupation  -->
 
-                
-                <div *ngIf="financial_and_occupation.controls.f6_children.value != 0 && financial_and_occupation.controls.f6_children.value != ''">
-					<ion-item *ngIf="financial_and_occupation.controls.f6_children.value !== '0'">
-			            <ion-label floating>Any Of Children Use Smart familys? <span>*</span></ion-label>
-			            <ion-select formControlName="f6_smartuse" interface="popover">
-					      <ion-option value="yes">Yes</ion-option>
-					      <ion-option value="no">No</ion-option>
-					    </ion-select>
-			        </ion-item>
-			        <div *ngIf="financial_and_occupation.controls.f6_smartuse.invalid  && (financial_and_occupation.controls.f6_smartuse.dirty || submitAttempt)">
-			            <p *ngIf="financial_and_occupation.controls.f6_smartuse.errors.required">This field is required.</p>
-			        </div>
-		        </div>
+				<ion-item>
+					<ion-label floating>How Many Day's Labor Work Was Available in a year</ion-label>
+					<ion-input formControlName="f1_num_of_days_labor_work" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!financial_and_occupation.controls.f1_num_of_days_labor_work.valid  && (financial_and_occupation.controls.f1_num_of_days_labor_work.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- How Many Day's Labor Work Was Available in a year -->
 
+				<ion-item>
+					<ion-label floating>Labor work Rate/Day's</ion-label>
+					<ion-input formControlName="f1_labor_work_rate" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!financial_and_occupation.controls.f1_labor_work_rate.valid  && (financial_and_occupation.controls.f1_labor_work_rate.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Labor work Rate/Day's   -->
 
+				<ion-item>
+					<ion-label floating>Therefore, Income from Labor</ion-label>
+					<ion-input formControlName="f1_income_from_labor" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!financial_and_occupation.controls.f1_income_from_labor.valid  && (financial_and_occupation.controls.f1_income_from_labor.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Therefore, Income from Labor --> 
 			</div>
 		</ion-list>
 		

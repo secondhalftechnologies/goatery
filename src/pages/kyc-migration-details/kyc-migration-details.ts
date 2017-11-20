@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /**
- * Generated class for the KycFamilyPage page.
+ * Generated class for the KycMigrationDetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,72 +11,52 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @IonicPage()
 @Component({
-  selector: 'page-kyc-financial-and-occupation',
-  templateUrl: 'kyc-financial-and-occupation.html',
+  selector: 'page-kyc-migration-details',
+  templateUrl: 'kyc-migration-details.html',
 })
-export class KycFinancialAndOccupationPage {
+export class KycMigrationDetailsPage {
 
-  	financial_and_occupation: FormGroup;
+	migration: FormGroup;
 	submitAttempt: boolean = false;
 
 	constructor(public navCtrl: NavController, 
-				public navParams: NavParams, 
+				public navParams: NavParams,
 				public toastCtrl: ToastController,
 				public formBuilder: FormBuilder) {
-		this.financial_and_occupation = formBuilder.group({
-			'f6_points' : ['0'],
-
-			'f6_jointfamily' : ['', Validators.required],
-			'f6_members' : ['', Validators.required],
-			'f6_children' : ['', Validators.required],
-			'f6_smartuse' : ['',Validators.required],
+		this.migration = formBuilder.group({
+			'f4_do_you_migrate' : ['', Validators.required],
+			'f4_migrate_reason' : ['', Validators.required],
+			'f4_number_of_days_of_migrate' : ['', Validators.required],
 		});
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad KycPhonePage');
-
-		this.financial_and_occupation.controls['f6_children'].valueChanges.subscribe(() => {this.setValidation();});
-
+		console.log('ionViewDidLoad KycMigrationDetailsPage');
 	}
 
-	setValidation()
+	showMessage(message, style: string, dur?: number)
 	{
-		let controls = this.financial_and_occupation.controls;
-
-		console.log(controls['f6_smartuse'].value);
-		if(controls['f6_children'].value > 0)
-		{
-			controls['f6_smartuse'].enable({ emitEvent: false });
-			console.log('ddddf');
-		}
-		else{
-
-			controls['f6_smartuse'].setValue('', { emitEvent: false });
-			controls['f6_smartuse'].disable();
-
-		}
-
-	}
-
-	showMessage(message, style: string, dur?: number){
 		const toast = this.toastCtrl.create({
-	      message: message,
-	      showCloseButton: true,
-	      duration: dur || 5000,
-	      closeButtonText: 'Ok',
-	      cssClass: style,
-	      dismissOnPageChange: true
+			message: message,
+			showCloseButton: true,
+			duration: dur || 5000,
+			closeButtonText: 'Ok',
+			cssClass: style,
+			dismissOnPageChange: true
 	    });
 
 	    toast.present();
 	}
 
-	save(){
+	save()
+	{
 		this.submitAttempt = true;
-		if (this.financial_and_occupation.valid) {
-			console.log(this.financial_and_occupation.value);
-		}else{
+		if (this.migration.valid) 
+		{
+			console.log(this.migration.value);
+		}
+		else
+		{
 			console.log('Validation error');
 			this.showMessage("Please fill valid data!", "danger", 100000);
 		}

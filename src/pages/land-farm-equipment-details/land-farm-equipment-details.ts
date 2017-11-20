@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /**
- * Generated class for the KycHomeDetailsPage page.
+ * Generated class for the LandFarmEquipmentDetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,37 +11,33 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @IonicPage()
 @Component({
-  selector: 'page-kyc-home-details',
-  templateUrl: 'kyc-home-details.html',
+  selector: 'page-land-farm-equipment-details',
+  templateUrl: 'land-farm-equipment-details.html',
 })
-export class KycHomeDetailsPage {
+export class LandFarmEquipmentDetailsPage {
 
-	home: FormGroup;
+	equipment: FormGroup;
 	submitAttempt: boolean = false;
 
 	constructor(public navCtrl: NavController, 
 				public navParams: NavParams,
 				public toastCtrl: ToastController,
 				public formBuilder: FormBuilder) {
-		this.home = formBuilder.group({
-			'f3_house_type' : ['', Validators.required],
-			'f3_is_electricity' : ['', Validators.required],
-			'f3_is_gas_connection' : ['', Validators.required],
-			'f3_is_tv' : ['', Validators.required],
-			'f3_is_radio' : ['', Validators.required],
-			'f3_is_fan' : ['', Validators.required],
-			'f3_is_mobile' : ['', Validators.required],
-			'f3_is_mixer' : ['', Validators.required],
-			'f3_is_cooker' : ['', Validators.required],
-			'f3_is_bed' : ['', Validators.required],
-			'f3_num_of_chairs' : ['', Validators.required],
-			'f3_num_of_cycle' : ['', Validators.required],
-			'f3_num_of_motorcycle' : ['', Validators.required],
+		this.equipment = formBuilder.group({
+			'f6_Borewell' : ['', Validators.required],
+			'f6_Well' : ['', Validators.required],
+			'f6_Water_Tank' : ['', Validators.required],
+			'f6_Water_Pump' : ['', Validators.required],
+			'f6_Diesel_Pump' : ['', Validators.required],
+			'f6_Drip_Irrigation' : ['', Validators.required],
+			'f6_Tractor' : ['', Validators.required],
+			'f6_Tractor_Trolley' : ['', Validators.required],
+			'f6_Bullock_Cart' : ['', Validators.required],
 		});
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad KycHomeDetailsPage');
+		console.log('ionViewDidLoad LandFarmEquipmentDetailsPage');
 	}
 
 	showMessage(message, style: string, dur?: number)
@@ -61,9 +57,9 @@ export class KycHomeDetailsPage {
 	save()
 	{
 		this.submitAttempt = true;
-		if (this.home.valid) 
+		if (this.equipment.valid) 
 		{
-			console.log(this.home.value);
+			console.log(this.equipment.value);
 		}
 		else
 		{

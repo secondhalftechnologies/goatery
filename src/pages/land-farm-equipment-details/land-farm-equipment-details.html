@@ -1,0 +1,109 @@
+<!--
+  Generated template for the LandFarmEquipmentDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>FARM EQUIPMENTS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<form [formGroup]="equipment">
+		<ion-list>
+			<div padding>
+
+				<ion-item>
+					<ion-label floating>Borewell</ion-label>
+					<ion-input formControlName="f6_Borewell" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!equipment.controls.f6_Borewell.valid  && (equipment.controls.f6_Borewell.dirty || submitAttempt)">
+					<p *ngIf="equipment.controls.f6_Borewell.errors.required">Please enter a valid name.</p>
+					<p *ngIf="equipment.controls.f6_Borewell.errors.maxlength">Length shoud be equal to or smaller than {{equipment.controls.f6_Borewell.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Borewell -->
+
+				<ion-item>
+					<ion-label floating>Well</ion-label>
+					<ion-input formControlName="f6_Well" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!equipment.controls.f6_Well.valid  && (equipment.controls.f6_Well.dirty || submitAttempt)">
+					<p *ngIf="equipment.controls.f6_Well.errors.required">Please enter a valid name.</p>
+					<p *ngIf="equipment.controls.f6_Well.errors.maxlength">Length shoud be equal to or smaller than {{equipment.controls.f6_Well.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Well -->
+
+				<ion-item>
+					<ion-label floating>Water Tank</ion-label>
+					<ion-input formControlName="f6_Water_Tank" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!equipment.controls.f6_Water_Tank.valid  && (equipment.controls.f6_Water_Tank.dirty || submitAttempt)">
+					<p *ngIf="equipment.controls.f6_Water_Tank.errors.required">Please enter a valid name.</p>
+					<p *ngIf="equipment.controls.f6_Water_Tank.errors.maxlength">Length shoud be equal to or smaller than {{equipment.controls.f6_Water_Tank.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Water Tank -->
+
+				<ion-item>
+					<ion-label floating>Water Pump</ion-label>
+					<ion-input formControlName="f6_Water_Pump" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!equipment.controls.f6_Water_Pump.valid  && (equipment.controls.f6_Water_Pump.dirty || submitAttempt)">
+					<p *ngIf="equipment.controls.f6_Water_Pump.errors.required">Please enter a valid name.</p>
+					<p *ngIf="equipment.controls.f6_Water_Pump.errors.maxlength">Length shoud be equal to or smaller than {{equipment.controls.f6_Water_Pump.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Water Pump -->
+
+				<ion-item>
+					<ion-label floating>Diesel Pump</ion-label>
+					<ion-input formControlName="f6_Diesel_Pump" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!equipment.controls.f6_Diesel_Pump.valid  && (equipment.controls.f6_Diesel_Pump.dirty || submitAttempt)">
+					<p *ngIf="equipment.controls.f6_Diesel_Pump.errors.required">Please enter a valid name.</p>
+					<p *ngIf="equipment.controls.f6_Diesel_Pump.errors.maxlength">Length shoud be equal to or smaller than {{equipment.controls.f6_Diesel_Pump.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Diesel Pump -->
+
+				<ion-item>
+					<ion-label floating>Drip Irrigation</ion-label>
+					<ion-input formControlName="f6_Drip_Irrigation" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!equipment.controls.f6_Drip_Irrigation.valid  && (equipment.controls.f6_Drip_Irrigation.dirty || submitAttempt)">
+					<p *ngIf="equipment.controls.f6_Drip_Irrigation.errors.required">Please enter a valid name.</p>
+					<p *ngIf="equipment.controls.f6_Drip_Irrigation.errors.maxlength">Length shoud be equal to or smaller than {{equipment.controls.f6_Drip_Irrigation.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Drip Irrigation -->
+
+				<ion-item>
+					<ion-label floating>Tractor</ion-label>
+					<ion-input formControlName="f6_Tractor" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!equipment.controls.f6_Tractor.valid  && (equipment.controls.f6_Tractor.dirty || submitAttempt)">
+					<p *ngIf="equipment.controls.f6_Tractor.errors.required">Please enter a valid name.</p>
+					<p *ngIf="equipment.controls.f6_Tractor.errors.maxlength">Length shoud be equal to or smaller than {{equipment.controls.f6_Tractor.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Tractor -->
+
+				<ion-item>
+					<ion-label floating>Tractor Trolley</ion-label>
+					<ion-input formControlName="f6_Tractor_Trolley" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!equipment.controls.f6_Tractor_Trolley.valid  && (equipment.controls.f6_Tractor_Trolley.dirty || submitAttempt)">
+					<p *ngIf="equipment.controls.f6_Tractor_Trolley.errors.required">Please enter a valid name.</p>
+					<p *ngIf="equipment.controls.f6_Tractor_Trolley.errors.maxlength">Length shoud be equal to or smaller than {{equipment.controls.f6_Tractor_Trolley.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Tractor Trolley -->
+
+				<ion-item>
+					<ion-label floating>Bullock Cart</ion-label>
+					<ion-input formControlName="f6_Bullock_Cart" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!equipment.controls.f6_Bullock_Cart.valid  && (equipment.controls.f6_Bullock_Cart.dirty || submitAttempt)">
+					<p *ngIf="equipment.controls.f6_Bullock_Cart.errors.required">Please enter a valid name.</p>
+					<p *ngIf="equipment.controls.f6_Bullock_Cart.errors.maxlength">Length shoud be equal to or smaller than {{equipment.controls.f6_Bullock_Cart.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Bullock Cart -->
+
+			</div>
+		</ion-list>
+	</form>
+
+	<ion-fab top right edge>
+		<button (click)="save()" ion-fab><ion-icon name="checkmark"></ion-icon></button>
+    </ion-fab>
+</ion-content>
