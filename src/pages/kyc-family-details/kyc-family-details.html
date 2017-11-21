@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-	<ion-navbar>
+	<ion-navbar color="app">
 		<ion-title>FAMMILY DETAILS</ion-title>
 	</ion-navbar>
 
@@ -38,7 +38,11 @@
 				<ion-item>
 				    <ion-label floating>Education<span>*</span></ion-label>
 				    <ion-select formControlName="f2_education_id" interface="popover">
-						<ion-option *ngFor="let opt of ddl_education" value="{{opt.name}}"> {{opt.value}} </ion-option>
+						<ion-option value="illiterate">illiterate</ion-option>
+						<ion-option value="tenth or under">tenth or under</ion-option>
+						<ion-option value="12th std">12th std</ion-option>
+						<ion-option value="graduation">graduation</ion-option>
+						<ion-option value="post graduation">post graduation</ion-option>
  					</ion-select>
 				</ion-item>
 				<div *ngIf="family.controls.f2_education_id.invalid  && (family.controls.f2_education_id.dirty || submitAttempt)">
@@ -48,13 +52,13 @@
 		        <ion-item>
 				    <ion-label floating>Occupation <span>*</span></ion-label>
 				    <ion-select formControlName="occupation_id" interface="popover">
-						<ion-option value="1">Farming</ion-option>
-						<ion-option value="2">Dairy</ion-option>
-						<ion-option value="3">Goatery</ion-option>
-						<ion-option value="4">Poultry</ion-option>
-						<ion-option value="5">Service</ion-option>
-						<ion-option value="6">Business</ion-option>
-						<ion-option value="7">Labor</ion-option>			      
+						<ion-option value="Farming">Farming</ion-option>
+						<ion-option value="Dairy">Dairy</ion-option>
+						<ion-option value="Goatery">Goatery</ion-option>
+						<ion-option value="Poultry">Poultry</ion-option>
+						<ion-option value="Service">Service</ion-option>
+						<ion-option value="Business">Business</ion-option>
+						<ion-option value="Labor">Labor</ion-option>			      
 				    </ion-select>
 				</ion-item>
 				<div *ngIf="family.controls.occupation_id.invalid  && (family.controls.occupation_id.dirty || submitAttempt)">

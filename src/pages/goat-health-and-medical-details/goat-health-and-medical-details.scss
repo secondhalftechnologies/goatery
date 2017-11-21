@@ -1,3 +1,10 @@
 page-goat-health-and-medical-details {
-
+	ion-label{
+		overflow: auto;
+		text-overflow: unset;
+    	white-space: unset;
+		span{
+			color: red;
+		}
+	}
 }

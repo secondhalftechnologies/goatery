@@ -1,3 +1,10 @@
 page-loan-details {
-
+	ion-label{
+		overflow: auto;
+		text-overflow: unset;
+    	white-space: unset;
+		span{
+			color: red;
+		}
+	}
 }

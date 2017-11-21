@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="app">
     <ion-title>PRODUCER COMPANY</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,68 @@
 
 
 <ion-content padding>
+	<form [formGroup]="producer_company_details">
+		<ion-list>
+			<div padding>
 
+				<ion-item>
+				    <ion-label floating>SHG Member?<span>*</span></ion-label>
+				    <ion-select formControlName="f13_is_shg_member" interface="popover">
+						<ion-option value="yes">Yes</ion-option>
+						<ion-option value="no">No</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="producer_company_details.controls.f13_is_shg_member.invalid  && (producer_company_details.controls.f13_is_shg_member.dirty || submitAttempt)">
+		            <p *ngIf="producer_company_details.controls.f13_is_shg_member.errors.required">This field is required.</p>
+		        </div>	<!-- SHG Member? Yes/no -->
+
+
+				<ion-item>
+				    <ion-label floating>Do you wish to be a part of this project<span>*</span></ion-label>
+				    <ion-select formControlName="f13_is_part_of_this_project" interface="popover">
+						<ion-option value="yes">Yes</ion-option>
+						<ion-option value="no">No</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="producer_company_details.controls.f13_is_part_of_this_project.invalid  && (producer_company_details.controls.f13_is_part_of_this_project.dirty || submitAttempt)">
+		            <p *ngIf="producer_company_details.controls.f13_is_part_of_this_project.errors.required">This field is required.</p>
+		        </div>	<!-- Do you wish to be a part of this project -->
+
+
+				<ion-item>
+				    <ion-label floating>Member of the FPC?<span>*</span></ion-label>
+				    <ion-select formControlName="f13_member_of_fpc" interface="popover">
+						<ion-option value="yes">Yes</ion-option>
+						<ion-option value="no">No</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="producer_company_details.controls.f13_member_of_fpc.invalid  && (producer_company_details.controls.f13_member_of_fpc.dirty || submitAttempt)">
+		            <p *ngIf="producer_company_details.controls.f13_member_of_fpc.errors.required">This field is required.</p>
+		        </div>	<!-- Member of the FPC? -->
+
+
+				<ion-item>
+					<ion-label floating>Which FPC memberyou currently?</ion-label>
+					<ion-input formControlName="f13_which_fpc_member_you_are" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!producer_company_details.controls.f13_which_fpc_member_you_are.valid  && (producer_company_details.controls.f13_which_fpc_member_you_are.dirty || submitAttempt)">
+					<p *ngIf="producer_company_details.controls.f13_which_fpc_member_you_are.errors.required">Please enter a valid name.</p>
+					<p *ngIf="producer_company_details.controls.f13_which_fpc_member_you_are.errors.maxlength">Length shoud be equal to or smaller than {{producer_company_details.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Which FPC memberyou currently? -->
+
+
+				<ion-item>
+				    <ion-label floating>Do you wish to be a part of Savitribai Phule Goat FPC?<span>*</span></ion-label>
+				    <ion-select formControlName="f13_wish_to_be_part_of_this_fpc" interface="popover">
+						<ion-option value="yes">Yes</ion-option>
+						<ion-option value="no">No</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="producer_company_details.controls.f13_wish_to_be_part_of_this_fpc.invalid  && (producer_company_details.controls.f13_wish_to_be_part_of_this_fpc.dirty || submitAttempt)">
+		            <p *ngIf="producer_company_details.controls.f13_wish_to_be_part_of_this_fpc.errors.required">This field is required.</p>
+		        </div>	<!-- Do you wish to be a part of Savitribai Phule Goat FPC?  -->
+
+			</div>
+		</ion-list>
+	</form>
 </ion-content>

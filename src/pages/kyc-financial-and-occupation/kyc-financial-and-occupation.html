@@ -35,10 +35,10 @@
 		        <ion-item>
 				    <ion-label floating>Financial Status <span>*</span></ion-label>
 				    <ion-select formControlName="f1_financial_status_id" interface="popover">
-						<ion-option value="1">BPL</ion-option>
-						<ion-option value="2">APL </ion-option>
-						<ion-option value="3">Anthodaya</ion-option>
-						<ion-option value="4">White Ration Card</ion-option>
+						<ion-option value="BPL">BPL</ion-option>
+						<ion-option value="APL">APL </ion-option>
+						<ion-option value="Anthodaya">Anthodaya</ion-option>
+						<ion-option value="White Ration Card">White Ration Card</ion-option>
 				    </ion-select>
 				</ion-item>
 				<div *ngIf="financial_and_occupation.controls.f1_financial_status_id.invalid  && (financial_and_occupation.controls.f1_financial_status_id.dirty || submitAttempt)">
@@ -56,13 +56,13 @@
 				<ion-item>
 				    <ion-label floating>Occupation <span>*</span></ion-label>
 				    <ion-select formControlName="occupation_id" interface="popover">
-						<ion-option value="1">Farming</ion-option>
-						<ion-option value="2">Dairy</ion-option>
-						<ion-option value="3">Goatery</ion-option>
-						<ion-option value="4">Poultry</ion-option>
-						<ion-option value="5">Service</ion-option>
-						<ion-option value="6">Business</ion-option>
-						<ion-option value="7">Labor</ion-option>			      
+						<ion-option value="Farming">Farming</ion-option>
+						<ion-option value="Dairy">Dairy</ion-option>
+						<ion-option value="Goatery">Goatery</ion-option>
+						<ion-option value="Poultry">Poultry</ion-option>
+						<ion-option value="Service">Service</ion-option>
+						<ion-option value="Business">Business</ion-option>
+						<ion-option value="Labor">Labor</ion-option>			      
 				    </ion-select>
 				</ion-item>
 				<div *ngIf="financial_and_occupation.controls.occupation_id.invalid  && (financial_and_occupation.controls.occupation_id.dirty || submitAttempt)">
