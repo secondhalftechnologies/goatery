@@ -38,12 +38,8 @@
 				<ion-item>
 				    <ion-label floating>Education<span>*</span></ion-label>
 				    <ion-select formControlName="f2_education_id" interface="popover">
-						<ion-option value="1">illiterate</ion-option>
-						<ion-option value="2">tenth or under</ion-option>
-						<ion-option value="3">12th std</ion-option>
-						<ion-option value="4">graduation</ion-option>
-						<ion-option value="5">post graduation</ion-option>
-					</ion-select>
+						<ion-option *ngFor="let opt of ddl_education" value="{{opt.name}}"> {{opt.value}} </ion-option>
+ 					</ion-select>
 				</ion-item>
 				<div *ngIf="family.controls.f2_education_id.invalid  && (family.controls.f2_education_id.dirty || submitAttempt)">
 		            <p *ngIf="family.controls.f2_education_id.errors.required">This field is required.</p>

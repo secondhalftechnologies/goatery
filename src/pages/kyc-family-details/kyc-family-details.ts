@@ -18,6 +18,8 @@ export class KycFamilyDetailsPage {
 
 	family: FormGroup;
 	submitAttempt: boolean = false;
+	ddl_education: Array<any> = [];
+
 
 	constructor(public navCtrl: NavController, 
 				public navParams: NavParams,
@@ -35,6 +37,18 @@ export class KycFamilyDetailsPage {
 			'f2_num_of_earning_members' : ['', Validators.required],
 			'f2_annual_income_of_family' : ['', Validators.required],
 		});
+
+		
+		//Call get methode here
+		let data = [
+			{ 'name' : '1' , 'value' : 'illiterate' },
+			{ 'name' : '2' , 'value' : 'tenth or under' },
+			{ 'name' : '3' , 'value' : '12th std' },
+			{ 'name' : '4' , 'value' : 'graduation' },
+			{ 'name' : '5' , 'value' : 'post graduation' },
+		];
+
+		this.ddl_education = data;
 	}
 
 	ionViewDidLoad() 
