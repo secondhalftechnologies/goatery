@@ -16,7 +16,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoanDetailsPage {
 
-	insurance: FormGroup;
+	loan: FormGroup;
 	submitAttempt: boolean = false;
 
 	constructor(public navCtrl: NavController, 
@@ -24,7 +24,7 @@ export class LoanDetailsPage {
 				public toastCtrl: ToastController,
 				public formBuilder: FormBuilder) 
 	{
-		this.insurance = formBuilder.group({
+		this.loan = formBuilder.group({
 			'f10_taken_any_loan' : ['', Validators.required],
 			'f10_loan_purpose' : [''],
 			'f10_loan_use' : [''],
@@ -58,9 +58,9 @@ export class LoanDetailsPage {
 	save()
 	{
 		this.submitAttempt = true;
-		if (this.insurance.valid) 
+		if (this.loan.valid) 
 		{
-			console.log(this.insurance.value);
+			console.log(this.loan.value);
 		}
 		else
 		{
