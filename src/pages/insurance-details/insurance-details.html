@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="app">
     <ion-title>INSURANCE</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,98 @@
 
 
 <ion-content padding>
+	<form [formGroup]="insurance">
+		<ion-list>
+			<div padding>
 
+				<ion-item>
+					<ion-label floating>Are your goats insured? </ion-label>
+					<ion-select formControlName="f11_are_your_gost_insured" interface="popover">
+						<ion-option value="yes">Yes</ion-option>
+						<ion-option value="no">No</ion-option>
+					</ion-select>
+				</ion-item>
+				<div *ngIf="!insurance.controls.f11_are_your_gost_insured.valid  && (insurance.controls.f11_are_your_gost_insured.dirty || submitAttempt)">
+					<p>Please select this field is required</p>
+				</div>	<!-- Are your goats insured? -->
+
+				<div *ngIf="insurance.controls.f11_are_your_gost_insured.value == 'yes'">
+
+					<ion-item>
+					    <ion-label floating>Which breed is insured? [Multiple Selection]<span>*</span></ion-label>
+					    <ion-select formControlName="f11_which_breed_is_insured" interface="popover">
+							<ion-option value="Marwari">Marwari</ion-option>
+							<ion-option value="Mehsana">Mehsana</ion-option>
+							<ion-option value="Zalwadi">Zalwadi</ion-option>
+							<ion-option value="Sirohi">Sirohi</ion-option>
+							<ion-option value="Berari">Berari</ion-option>
+							<ion-option value="Barberi">Barberi</ion-option>
+							<ion-option value="Kathiawadi">Kathiawadi</ion-option>
+							<ion-option value="Kanni Aadu">Kanni Aadu</ion-option>
+							<ion-option value="Jodi Aadu">Jodi Aadu</ion-option>
+							<ion-option value="Malarbar">Malarbar</ion-option>
+							<ion-option value="Surti">Surti</ion-option>
+							<ion-option value="Osmanabadi">Osmanabadi</ion-option>
+							<ion-option value="Konkan Kanyal">Konkan Kanyal</ion-option>
+							<ion-option value="Sangamneri">Sangamneri</ion-option>
+							<ion-option value="Jamunapari">Jamunapari</ion-option>
+							<ion-option value="Black Bengal">Black Bengal</ion-option>
+							<ion-option value="African Boer">African Boer</ion-option>
+							<ion-option value="Sojat">Sojat</ion-option>
+							<ion-option value="Beetel">Beetel</ion-option>
+							<ion-option value="Pashmina">Pashmina</ion-option>
+							<ion-option value="Jakhrana">Jakhrana</ion-option>
+							<ion-option value="Sanen">Sanen</ion-option>
+	 					</ion-select>
+					</ion-item>
+					<div *ngIf="insurance.controls.f11_which_breed_is_insured.invalid  && (insurance.controls.f11_which_breed_is_insured.dirty || submitAttempt)">
+			            <p *ngIf="insurance.controls.f11_which_breed_is_insured.errors.required">This field is required.</p>
+			        </div>
+
+					<ion-item>
+						<ion-label floating>Which breed is insured?</ion-label>
+						<ion-input formControlName="f11_which_breed_is_insured" type="text"></ion-input>
+					</ion-item>
+					<div *ngIf="!insurance.controls.f11_which_breed_is_insured.valid  && (insurance.controls.f11_which_breed_is_insured.dirty || submitAttempt)">
+						<p *ngIf="insurance.controls.f11_which_breed_is_insured.errors.required">Please enter a valid name.</p>
+						<p *ngIf="insurance.controls.f11_which_breed_is_insured.errors.maxlength">Length shoud be equal to or smaller than {{insurance.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+					</div>	<!-- Which breed is insured? -->
+
+
+					<ion-item>
+						<ion-label floating>Who is the Insuring Agency?</ion-label>
+						<ion-input formControlName="f11_insuring_agency" type="text"></ion-input>
+					</ion-item>
+					<div *ngIf="!insurance.controls.f11_insuring_agency.valid  && (insurance.controls.f11_insuring_agency.dirty || submitAttempt)">
+						<p *ngIf="insurance.controls.f11_insuring_agency.errors.required">Please enter a valid name.</p>
+						<p *ngIf="insurance.controls.f11_insuring_agency.errors.maxlength">Length shoud be equal to or smaller than {{insurance.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+					</div>	<!-- Who is the Insuring Agency?  -->
+
+
+					<ion-item>
+						<ion-label floating>How much premium you pay?</ion-label>
+						<ion-input formControlName="f11_premium_amount_to_pay" type="number"></ion-input>
+					</ion-item>
+					<div *ngIf="!insurance.controls.f11_premium_amount_to_pay.valid  && (insurance.controls.f11_premium_amount_to_pay.dirty || submitAttempt)">
+						<p>Please enter a valid entry</p>
+					</div>	<!-- How much premium you pay? -->
+
+
+					<ion-item>
+						<ion-label floating>Duration of Premium?</ion-label>
+						<ion-input formControlName="f11_duration_of_premium" type="number"></ion-input>
+					</ion-item>
+					<div *ngIf="!insurance.controls.f11_duration_of_premium.valid  && (insurance.controls.f11_duration_of_premium.dirty || submitAttempt)">
+						<p>Please enter a valid entry</p>
+					</div>	<!-- Duration of Premium? -->
+									
+				</div>
+
+			</div>
+		</ion-list>
+	</form>
+
+	<ion-fab top right edge>
+		<button (click)="save()" ion-fab><ion-icon name="checkmark"></ion-icon></button>
+    </ion-fab>
 </ion-content>

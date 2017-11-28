@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="app">
     <ion-title>LOAN DETAILS</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,114 @@
 
 
 <ion-content padding>
+	<form [formGroup]="loan">
+		<ion-list>
+			<div padding>
 
+				<ion-item>
+					<ion-label floating>Have you taken any loan? </ion-label>
+					<ion-select formControlName="f10_taken_any_loan" interface="popover">
+						<ion-option value="yes">Yes</ion-option>
+						<ion-option value="no">No</ion-option>
+					</ion-select>
+				</ion-item>
+				<div *ngIf="!loan.controls.f10_taken_any_loan.valid  && (loan.controls.f10_taken_any_loan.dirty || submitAttempt)">
+					<p>Please select this field is required</p>
+				</div>	<!-- Have you taken any loan? -->
+
+
+				<div *ngIf="loan.controls.f10_taken_any_loan.value == 'yes'">
+
+					<ion-item>
+						<ion-label floating>Loan Purpose</ion-label>
+						<ion-input formControlName="f10_loan_purpose" type="text"></ion-input>
+					</ion-item>
+					<div *ngIf="!loan.controls.f10_loan_purpose.valid  && (loan.controls.f10_loan_purpose.dirty || submitAttempt)">
+						<p *ngIf="loan.controls.f10_loan_purpose.errors.required">Please enter a valid name.</p>
+						<p *ngIf="loan.controls.f10_loan_purpose.errors.maxlength">Length shoud be equal to or smaller than {{loan.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+					</div>	<!-- Loan Purpose -->
+
+
+					<ion-item>
+						<ion-label floating>Loan Use</ion-label>
+						<ion-input formControlName="f10_loan_use" type="text"></ion-input>
+					</ion-item>
+					<div *ngIf="!loan.controls.f10_loan_use.valid  && (loan.controls.f10_loan_use.dirty || submitAttempt)">
+						<p *ngIf="loan.controls.f10_loan_use.errors.required">Please enter a valid name.</p>
+						<p *ngIf="loan.controls.f10_loan_use.errors.maxlength">Length shoud be equal to or smaller than {{loan.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+					</div>	<!-- Loan Use -->
+
+
+					<ion-item>
+						<ion-label floating>Loan taken from where?</ion-label>
+						<ion-input formControlName="f10_loan_taken_from_where" type="text"></ion-input>
+					</ion-item>
+					<div *ngIf="!loan.controls.f10_loan_taken_from_where.valid  && (loan.controls.f10_loan_taken_from_where.dirty || submitAttempt)">
+						<p *ngIf="loan.controls.f10_loan_taken_from_where.errors.required">Please enter a valid name.</p>
+						<p *ngIf="loan.controls.f10_loan_taken_from_where.errors.maxlength">Length shoud be equal to or smaller than {{loan.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+					</div>	<!-- Loan taken from where? -->
+
+
+					<ion-item>
+						<ion-label floating>Interest Rate</ion-label>
+						<ion-input formControlName="f10_interest_rate" type="number"></ion-input>
+					</ion-item>
+					<div *ngIf="!loan.controls.f10_interest_rate.valid  && (loan.controls.f10_interest_rate.dirty || submitAttempt)">
+						<p>Please enter a valid entry</p>
+					</div>	<!-- Interest Rate -->
+
+
+					<ion-item>
+						<ion-label floating>Which problems faced during loan procedure?</ion-label>
+						<ion-input formControlName="f10_problems_during_loan_process" type="text"></ion-input>
+					</ion-item>
+					<div *ngIf="!loan.controls.f10_problems_during_loan_process.valid  && (loan.controls.f10_problems_during_loan_process.dirty || submitAttempt)">
+						<p *ngIf="loan.controls.f10_problems_during_loan_process.errors.required">Please enter a valid name.</p>
+						<p *ngIf="loan.controls.f10_problems_during_loan_process.errors.maxlength">Length shoud be equal to or smaller than {{loan.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+					</div>	<!-- Which problems faced during loan procedure? -->
+
+
+					<ion-item>
+						<ion-label floating>Loan Duration</ion-label>
+						<ion-input formControlName="f10_loan_duration" type="number"></ion-input>
+					</ion-item>
+					<div *ngIf="!loan.controls.f10_loan_duration.valid  && (loan.controls.f10_loan_duration.dirty || submitAttempt)">
+						<p>Please enter a valid entry</p>
+					</div>	<!-- Loan Duration -->
+
+
+					<ion-item>
+						<ion-label floating>Loan Status </ion-label>
+						<ion-select formControlName="f10_loan_status" interface="popover">
+							<ion-option value="paid">Paid</ion-option>
+							<ion-option value="unpaid">Unpaid</ion-option>
+						</ion-select>
+					</ion-item>
+					<div *ngIf="!loan.controls.f10_loan_status.valid  && (loan.controls.f10_loan_status.dirty || submitAttempt)">
+						<p>Please select this field is required</p>
+					</div><!-- Loan Status -->
+
+					<div *ngIf="loan.controls.f10_loan_status.value == 'unpaid'">
+
+						<ion-item>
+							<ion-label floating>If unpaid, how much yet to be paid?</ion-label>
+							<ion-input formControlName="f10_how_much_yet_to_be_paid" type="number"></ion-input>
+						</ion-item>
+						<div *ngIf="!loan.controls.f10_how_much_yet_to_be_paid.valid  && (loan.controls.f10_how_much_yet_to_be_paid.dirty || submitAttempt)">
+							<p>Please enter a valid entry</p>
+						</div>	<!-- If unpaid, how much yet to be paid? -->
+						
+					</div>
+
+					
+				</div>
+
+
+			</div>
+		</ion-list>
+	</form>
+
+	<ion-fab top right edge>
+		<button (click)="save()" ion-fab><ion-icon name="checkmark"></ion-icon></button>
+    </ion-fab>
 </ion-content>

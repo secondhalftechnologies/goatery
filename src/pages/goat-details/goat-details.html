@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="app">
     <ion-title>GOAT DETAILS</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,143 @@
 
 
 <ion-content padding>
+	<form [formGroup]="goat_details">
+		<ion-list>
+			<div padding>
 
+				<ion-item>
+					<ion-label floating>Number of Goats</ion-label>
+					<ion-input formControlName="f7_number_of_goats" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_details.controls.f7_number_of_goats.valid  && (goat_details.controls.f7_number_of_goats.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Number of Goats -->
+
+
+				<ion-item>
+					<ion-label floating>Female Goat</ion-label>
+					<ion-input formControlName="f7_female_goat" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_details.controls.f7_female_goat.valid  && (goat_details.controls.f7_female_goat.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Female Goat -->
+
+
+				<ion-item>
+					<ion-label floating>Number of Buck</ion-label>
+					<ion-input formControlName="f7_number_of_buck" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_details.controls.f7_number_of_buck.valid  && (goat_details.controls.f7_number_of_buck.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Number of Buck  -->
+
+
+				<ion-item>
+					<ion-label floating>Number of Shegoat</ion-label>
+					<ion-input formControlName="f7_number_of_shegoat" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_details.controls.f7_number_of_shegoat.valid  && (goat_details.controls.f7_number_of_shegoat.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Number of Shegoat -->
+
+
+				<ion-item>
+				    <ion-label floating>Breeds of Goat [Multiple Selection]<span>*</span></ion-label>
+				    <ion-select formControlName="f7_breed_name" interface="popover">
+						<ion-option value="Marwari">Marwari</ion-option>
+						<ion-option value="Mehsana">Mehsana</ion-option>
+						<ion-option value="Zalwadi">Zalwadi</ion-option>
+						<ion-option value="Sirohi">Sirohi</ion-option>
+						<ion-option value="Berari">Berari</ion-option>
+						<ion-option value="Barberi">Barberi</ion-option>
+						<ion-option value="Kathiawadi">Kathiawadi</ion-option>
+						<ion-option value="Kanni Aadu">Kanni Aadu</ion-option>
+						<ion-option value="Jodi Aadu">Jodi Aadu</ion-option>
+						<ion-option value="Malarbar">Malarbar</ion-option>
+						<ion-option value="Surti">Surti</ion-option>
+						<ion-option value="Osmanabadi">Osmanabadi</ion-option>
+						<ion-option value="Konkan Kanyal">Konkan Kanyal</ion-option>
+						<ion-option value="Sangamneri">Sangamneri</ion-option>
+						<ion-option value="Jamunapari">Jamunapari</ion-option>
+						<ion-option value="Black Bengal">Black Bengal</ion-option>
+						<ion-option value="African Boer">African Boer</ion-option>
+						<ion-option value="Sojat">Sojat</ion-option>
+						<ion-option value="Beetel">Beetel</ion-option>
+						<ion-option value="Pashmina">Pashmina</ion-option>
+						<ion-option value="Jakhrana">Jakhrana</ion-option>
+						<ion-option value="Sanen">Sanen</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_details.controls.f7_breed_name.invalid  && (goat_details.controls.f7_breed_name.dirty || submitAttempt)">
+		            <p *ngIf="goat_details.controls.f7_breed_name.errors.required">This field is required.</p>
+		        </div>	<!-- Breeds of Goat  -->
+
+
+				<ion-item>
+					<ion-label floating>From where you buy goat?</ion-label>
+					<ion-input formControlName="f7_from_where_you_buy_goat" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_details.controls.f7_from_where_you_buy_goat.valid  && (goat_details.controls.f7_from_where_you_buy_goat.dirty || submitAttempt)">
+					<p *ngIf="goat_details.controls.f7_from_where_you_buy_goat.errors.required">Please enter a valid name.</p>
+					<p *ngIf="goat_details.controls.f7_from_where_you_buy_goat.errors.maxlength">Length shoud be equal to or smaller than {{goat_details.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- From where you buy goat? -->
+
+
+				<ion-item>
+				    <ion-label floating>Type of Goat Shed<span>*</span></ion-label>
+				    <ion-select formControlName="f7_type_of_goat_shed" interface="popover">
+						<ion-option value="kachha">kachha</ion-option>
+						<ion-option value="pakka">pakka</ion-option>
+						<ion-option value="mixed">mixed</ion-option>
+						
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_details.controls.f7_type_of_goat_shed.invalid  && (goat_details.controls.f7_type_of_goat_shed.dirty || submitAttempt)">
+		            <p *ngIf="goat_details.controls.f7_type_of_goat_shed.errors.required">This field is required.</p>
+		        </div>	<!-- Type of Goat Shed  -->
+
+
+				<ion-item>
+				    <ion-label floating>Source of Fodder<span>*</span></ion-label>
+				    <ion-select formControlName="f7_source_of_fodder" interface="popover">
+						<ion-option value="Own Grassland">Own Grassland</ion-option>
+						<ion-option value="Purchased Fodder">Purchased Fodder</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_details.controls.f7_source_of_fodder.invalid  && (goat_details.controls.f7_source_of_fodder.dirty || submitAttempt)">
+		            <p *ngIf="goat_details.controls.f7_source_of_fodder.errors.required">This field is required.</p>
+		        </div>	<!-- Source of Fodder -->
+
+
+				<ion-item>
+					<ion-label floating>Own Fodder Lasts how many days in a month</ion-label>
+					<ion-input formControlName="f7_own_fodder_lasts_in_num_of_days" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_details.controls.f7_own_fodder_lasts_in_num_of_days.valid  && (goat_details.controls.f7_own_fodder_lasts_in_num_of_days.dirty || submitAttempt)">
+					<p *ngIf="goat_details.controls.f7_own_fodder_lasts_in_num_of_days.errors.required">Please enter a valid name.</p>
+					<p *ngIf="goat_details.controls.f7_own_fodder_lasts_in_num_of_days.errors.maxlength">Length shoud be equal to or smaller than {{goat_details.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Own Fodder Lasts how many days in a month -->
+
+
+				<ion-item>
+				    <ion-label floating>Source of Water for Goats<span>*</span></ion-label>
+				    <ion-select formControlName="f7_water_source" interface="popover">
+						<ion-option value="Well">Well</ion-option>
+						<ion-option value="Borewell">Borewell</ion-option>
+						<ion-option value="Dam">Dam</ion-option>
+						<ion-option value="River">River</ion-option>
+						<ion-option value="Canal">Canal</ion-option>						
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_details.controls.f7_water_source.invalid  && (goat_details.controls.f7_water_source.dirty || submitAttempt)">
+		            <p *ngIf="goat_details.controls.f7_water_source.errors.required">This field is required.</p>
+		        </div>	<!-- Source of Water for Goats -->
+
+			</div>
+		</ion-list>
+	</form>
+
+	<ion-fab top right edge>
+		<button (click)="save()" ion-fab><ion-icon name="checkmark"></ion-icon></button>
+    </ion-fab>
 </ion-content>

@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="app">
     <ion-title>GOAT HEALTH AND MEDICAL</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,163 @@
 
 
 <ion-content padding>
+	<form [formGroup]="goat_health_and_medical">
+		<ion-list>
+			<div padding>
 
+				<ion-item>
+				    <ion-label floating>Do you Maintain Medical Record of Goat<span>*</span></ion-label>
+				    <ion-select formControlName="f8_maintain_medical_records" interface="popover">
+						<ion-option value="kachha">kachha</ion-option>
+						<ion-option value="pakka">pakka</ion-option>
+						<ion-option value="mixed">mixed</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_health_and_medical.controls.f8_maintain_medical_records.invalid  && (goat_health_and_medical.controls.f8_maintain_medical_records.dirty || submitAttempt)">
+		            <p *ngIf="goat_health_and_medical.controls.f8_maintain_medical_records.errors.required">This field is required.</p>
+		        </div>	<!-- Do you Maintain Medical Record of Goat  -->
+
+
+				<ion-item>
+				    <ion-label floating>Vaccinated the GOATS<span>*</span></ion-label>
+				    <ion-select formControlName="f8_is_vaccinated" interface="popover">
+						<ion-option value="kachha">kachha</ion-option>
+						<ion-option value="pakka">pakka</ion-option>
+						<ion-option value="mixed">mixed</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_health_and_medical.controls.f8_is_vaccinated.invalid  && (goat_health_and_medical.controls.f8_is_vaccinated.dirty || submitAttempt)">
+		            <p *ngIf="goat_health_and_medical.controls.f8_is_vaccinated.errors.required">This field is required.</p>
+		        </div>	<!-- Vaccinated the GOATS -->
+
+
+				<ion-item>
+				    <ion-label floating>Type Of Vaccination<span>*</span></ion-label>
+				    <ion-select formControlName="f8_vaccination_type" interface="popover">
+						<ion-option value="kachha">kachha</ion-option>
+						<ion-option value="pakka">pakka</ion-option>
+						<ion-option value="mixed">mixed</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_health_and_medical.controls.f8_vaccination_type.invalid  && (goat_health_and_medical.controls.f8_vaccination_type.dirty || submitAttempt)">
+		            <p *ngIf="goat_health_and_medical.controls.f8_vaccination_type.errors.required">This field is required.</p>
+		        </div>	<!-- Type Of Vaccination -->
+
+
+				<ion-item>
+					<ion-label floating>Frequency of Vacination</ion-label>
+					<ion-input formControlName="f8_vaccination_frequency" type="text"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_health_and_medical.controls.f8_vaccination_frequency.valid  && (goat_health_and_medical.controls.f8_vaccination_frequency.dirty || submitAttempt)">
+					<p *ngIf="goat_health_and_medical.controls.f8_vaccination_frequency.errors.required">Please enter a valid name.</p>
+					<p *ngIf="goat_health_and_medical.controls.f8_vaccination_frequency.errors.maxlength">Length shoud be equal to or smaller than {{goat_health_and_medical.controls.f2_husband_name.errors.maxlength.requiredLength}}</p>
+				</div>	<!-- Frequency of Vacination -->
+
+
+				<ion-item>
+				    <ion-label floating>Place of Vaccination<span>*</span></ion-label>
+				    <ion-select formControlName="f8_vaccination_place" interface="popover">
+						<ion-option value="kachha">kachha</ion-option>
+						<ion-option value="pakka">pakka</ion-option>
+						<ion-option value="mixed">mixed</ion-option>
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_health_and_medical.controls.f8_vaccination_place.invalid  && (goat_health_and_medical.controls.f8_vaccination_place.dirty || submitAttempt)">
+		            <p *ngIf="goat_health_and_medical.controls.f8_vaccination_place.errors.required">This field is required.</p>
+		        </div>	<!-- Place of Vaccination -->
+
+
+				<ion-item>
+					<ion-label floating>Number of Vaccinated Goats in a year</ion-label>
+					<ion-input formControlName="f8_number_of_vaccinated_goats" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_health_and_medical.controls.f8_number_of_vaccinated_goats.valid  && (goat_health_and_medical.controls.f8_number_of_vaccinated_goats.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Number of Vaccinated Goats in a year -->
+
+
+				<ion-item>
+				    <ion-label floating>Infections affected the goat [Multiple Selection]<span>*</span></ion-label>
+				    <ion-select formControlName="f8_infected_goats" interface="popover">
+						<ion-option value="kachha">kachha</ion-option>
+						<ion-option value="pakka">pakka</ion-option>
+						<ion-option value="mixed">mixed</ion-option>
+						
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_health_and_medical.controls.f8_infected_goats.invalid  && (goat_health_and_medical.controls.f8_infected_goats.dirty || submitAttempt)">
+		            <p *ngIf="goat_health_and_medical.controls.f8_infected_goats.errors.required">This field is required.</p>
+		        </div>	<!-- Infections affected the goat [Multiple Selection] -->
+
+
+				<ion-item>
+				    <ion-label floating>Any remedy for infection<span>*</span></ion-label>
+				    <ion-select formControlName="f8_any_remedy_for_infection" interface="popover">
+						<ion-option value="kachha">kachha</ion-option>
+						<ion-option value="pakka">pakka</ion-option>
+						<ion-option value="mixed">mixed</ion-option>
+						
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_health_and_medical.controls.f8_any_remedy_for_infection.invalid  && (goat_health_and_medical.controls.f8_any_remedy_for_infection.dirty || submitAttempt)">
+		            <p *ngIf="goat_health_and_medical.controls.f8_any_remedy_for_infection.errors.required">This field is required.</p>
+		        </div>	<!-- Any remedy for infection -->
+
+
+				<ion-item>
+					<ion-label floating>How many died in the last 1 year</ion-label>
+					<ion-input formControlName="f8_num_of_died_in_last_one_year" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_health_and_medical.controls.f8_num_of_died_in_last_one_year.valid  && (goat_health_and_medical.controls.f8_num_of_died_in_last_one_year.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- how many died in the last 1 year -->
+
+
+				<ion-item>
+				    <ion-label floating>Reason for death<span>*</span></ion-label>
+				    <ion-select formControlName="f8_reason_for_death" interface="popover">
+						<ion-option value="kachha">kachha</ion-option>
+						<ion-option value="pakka">pakka</ion-option>
+						<ion-option value="mixed">mixed</ion-option>
+						
+ 					</ion-select>
+				</ion-item>
+				<div *ngIf="goat_health_and_medical.controls.f8_reason_for_death.invalid  && (goat_health_and_medical.controls.f8_reason_for_death.dirty || submitAttempt)">
+		            <p *ngIf="goat_health_and_medical.controls.f8_reason_for_death.errors.required">This field is required.</p>
+		        </div>	<!-- Reason for death -->
+
+
+				<ion-item>
+					<ion-label floating>How many goats were insured</ion-label>
+					<ion-input formControlName="f8_num_of_goats_insured" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_health_and_medical.controls.f8_num_of_goats_insured.valid  && (goat_health_and_medical.controls.f8_num_of_goats_insured.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- How many goats were insured -->
+
+
+				<ion-item>
+					<ion-label floating>How many calving cycles for the past two years</ion-label>
+					<ion-input formControlName="f8_num_of_calving_cycles_for_past_two_years" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_health_and_medical.controls.f8_num_of_calving_cycles_for_past_two_years.valid  && (goat_health_and_medical.controls.f8_num_of_calving_cycles_for_past_two_years.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- How many calving cycles for the past two years -->
+
+
+				<ion-item>
+					<ion-label floating>How many births in the previous year</ion-label>
+					<ion-input formControlName="f8_num_of_births_in_prev_year" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_health_and_medical.controls.f8_num_of_births_in_prev_year.valid  && (goat_health_and_medical.controls.f8_num_of_births_in_prev_year.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- How many births in the previous year -->
+
+			</div>
+		</ion-list>
+	</form>
+
+	<ion-fab top right edge>
+		<button (click)="save()" ion-fab><ion-icon name="checkmark"></ion-icon></button>
+    </ion-fab>
 </ion-content>

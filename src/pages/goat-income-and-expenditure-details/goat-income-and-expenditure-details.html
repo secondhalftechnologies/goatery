@@ -6,13 +6,109 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>GOAT INCOME AND EXPENDITURE</ion-title>
-  </ion-navbar>
+	<ion-navbar color="app">
+		<ion-title>GOAT INCOME AND EXPENDITURE</ion-title>
+	</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+	<form [formGroup]="goat_income_and_expenditure">
+		<ion-list>
+			<div padding>
+
+				<!-- START : Expenses of Goat Purchasing  -->
+
+				<ion-item>
+					<ion-label floating>Own Expense </ion-label>
+					<ion-input formControlName="f8_number_of_vaccinated_goats" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_health_and_medical.controls.f8_number_of_vaccinated_goats.valid  && (goat_health_and_medical.controls.f8_number_of_vaccinated_goats.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div>	<!-- Own Expense -->
+	
+				<ion-item>
+					<ion-label floating>Other Source</ion-label>
+					<ion-input formControlName="f8_number_of_vaccinated_goats" type="number"></ion-input>
+				</ion-item>
+				<div *ngIf="!goat_health_and_medical.controls.f8_number_of_vaccinated_goats.valid  && (goat_health_and_medical.controls.f8_number_of_vaccinated_goats.dirty || submitAttempt)">
+					<p>Please enter a valid entry</p>
+				</div><!-- Other Source -->
+
+				<!-- END : Expenses of Goat Purchasing  -->
+
+
+				
+				<!-- START : Expenses of Estabalishment Goat Shed  -->
+
+				<!-- Own Purchase -->
+
+				<!-- Funded -->
+
+
+				<!-- Funding from -->
+
+				<!-- END : Expenses of Estabalishment Goat Shed  -->
+
+
+				
+				<!-- START : Expense on buying fodder -->
+				<!-- END : Expense on buying fodder -->
+
+
+				
+				<!-- START : Total Annual Medical Expenses of Goat  -->
+				<!-- END : Total Annual Medical Expenses of Goat  -->
+
+
+				
+				<!-- START : Other Expenses -->
+
+				<!-- Cleaning -->
+
+				<!-- Maintainence -->
+				
+				<!-- Labor -->
+				
+				<!-- Goat Rearing Rent -->
+
+				<!-- END : Other Expenses -->
+
+
+				
+				<!-- Total Annual Expenses -->
+
+
+				<!-- How many litres of milk were produced last year -->
+
+
+				<!-- Last year how many litres of milk sold? -->
+
+
+				<!-- Income from the sold milk -->
+
+
+				<!-- How many goats were sold last year -->
+
+
+				<!-- Average price of one goat -->
+
+
+				<!-- What were the problems while selling Goats -->
+
+
+				<!-- Income on selling the goats -->
+
+
+				<!-- What was the income from goat excreta -->
+
+
+				<!-- Total income earned from goat breeding  -->
+
+			</div>
+		</ion-list>
+	</form>
+
 
 </ion-content>
